@@ -1,13 +1,11 @@
 #include <stdio.h>
-#include <stdlib.h>
+
+int inc(int a) {
+    return a + 1;
+}
 
 int main() {
-    int zero = 0;
-    char name[30];
-    printf("What's your name?\n>");
-    scanf("%s", name);
-    if (zero != 0) {
-        system("sh");
-    }
-    printf("hello %s!\n", name);
+    int one = 1;
+    int two = inc(one);
+    printf("%d + 1 = %d\n", one, two);
 }

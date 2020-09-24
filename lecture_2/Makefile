@@ -1,7 +1,7 @@
-all: chal
+all: stack_again
 
-chal: src.c
-	gcc -fno-stack-protector -no-pie src.c -o chal
+stack_again: src.c
+	gcc -fno-stack-protector -no-pie src.c -o stack_again
 
-clean: chal
-	rm chal
+clean: stack_again
+	rm stack_again
