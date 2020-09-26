@@ -1,7 +1,7 @@
-all: stack_again
+all: increment
 
-stack_again: src.c
-	gcc -fno-stack-protector -no-pie src.c -o stack_again
+increment: src.c
+	gcc -fno-stack-protector -no-pie src.c -o increment
 
-clean: stack_again
-	rm stack_again
+clean: increment
+	rm increment
