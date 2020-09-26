@@ -5,7 +5,8 @@ int inc(int a) {
 }
 
 int main() {
-    int one = 1;
-    int two = inc(one);
-    printf("%d + 1 = %d\n", one, two);
+    int val;
+    scanf("%d", &val);
+    int ans = inc(val);
+    printf("%d + 1 = %d\n", val, ans);
 }
