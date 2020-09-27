@@ -1,2 +1,5 @@
 .vagrant
 solve.py
+peda-session*
+chal
+.gdb_history
