@@ -2,4 +2,5 @@
 solve.py
 peda-session*
 chal
+core
 .gdb_history
