@@ -1,0 +1,37 @@
+version: '3'
+services:
+    zero:
+        build:
+            context: challenges/zero/
+        working_dir: /home/pwn
+        container_name: zero
+        ulimits:
+            nproc: 65535
+            core: 0
+        ports:
+            - "4100:4100"
+        entrypoint: /etc/init.sh
+
+    first:
+        build:
+            context: challenges/first/
+        working_dir: /home/pwn
+        container_name: first
+        ulimits:
+            nproc: 65535
+            core: 0
+        ports:
+            - "4101:4101"
+        entrypoint: /etc/init.sh
+
+    second:
+        build:
+            context: challenges/second/
+        working_dir: /home/pwn
+        container_name: second
+        ulimits:
+            nproc: 65535
+            core: 0
+        ports:
+            - "4102:4102"
+        entrypoint: /etc/init.sh
