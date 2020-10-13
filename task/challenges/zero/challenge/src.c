@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 void win() {
     system("sh");
@@ -7,12 +8,18 @@ void win() {
 
 int main() {
     int zero = 0;
-
     char name[30];
     printf("What's your name?\n>");
-    fread(name, 1, 100, stdin);
-    if (zero == 0xdeafbeef) {
+    scanf("%s", name);
+    if (zero != 0) {
         win();
     }
     printf("hello %s!\n", name);
+}
+
+__attribute__((constructor))
+void setup() {
+    setvbuf(stdin, NULL, _IONBF, 0);
+    setvbuf(stdout, NULL, _IONBF, 0);
+    alarm(60);
 }
