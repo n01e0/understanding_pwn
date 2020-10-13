@@ -1,4 +1,5 @@
 #!/bin/bash
 sudo dnf install -y docker-compose nc
 sudo grubby --update-kernel=ALL --args="systemd.unified_cgroup_hierarchy=0"
+sudo python3 -m pip install -U docker-compose
 echo "please reboot this machine..."
