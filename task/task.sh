@@ -1,2 +1,2 @@
 #!/bin/bash
-cd task && sudo docker-compose up --build -d
+sudo docker-compose up --build -d
