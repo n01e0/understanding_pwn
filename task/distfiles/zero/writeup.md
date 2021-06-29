@@ -3,7 +3,7 @@
 ## access
 
 ```
-nc localhost 4100
+nc zero.upwn.epitomize.dev 4000
 ```
 
 ## solve
@@ -11,7 +11,7 @@ nc localhost 4100
 ```python
 from pwn import *
 
-io = remote("0.0.0.0", 4100)
+io = remote("zero.upwn.epitomize.dev", 4000)
 ```
 
 
